@@ -6,7 +6,11 @@
     "url": "sinchang/qrcode-parser",
     "type": "git"
   },
-  "main": "dist/qrcode-parser.cjs.js",
+  "source": "src/index.js",
+  "exports": "./dist/qrcode-parser.modern.js",
+  "main": "./dist/qrcode-parser.js",
+  "module": "./dist/qrcode-parser.module.js",
+  "umd:main": "./dist/qrcode-parser.umd.js",
   "files": [
     "dist"
   ],
@@ -14,7 +18,7 @@
     "test:cov": "jest --coverage && npm run lint",
     "test": "npm run lint && jest",
     "lint": "standard",
-    "build": "bili --format cjs,es,umd,umd-min --moduleName qrcodeParser",
+    "build": "microbundle",
     "example": "poi --serve",
     "build:example": "poi --prod",
     "semantic-release": "semantic-release"
@@ -57,6 +61,7 @@
     "babel-preset-env": "^1.7.0",
     "bili": "^5.0.5",
     "jest-cli": "^26.6.3",
+    "microbundle": "^0.13.0",
     "mime": "^2.5.2",
     "poi": "^12.10.3",
     "poi-preset-babel-minify": "^1.0.3",
